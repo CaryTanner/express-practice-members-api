@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<form  class="mb4">
+    <div class="form-group">
+        <label for="name" class="">Name</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="country" class="">Country</label>
+        <input type="text" name="country" class="form-control">
+    </div>
+    <input formmethod="POST" formaction="/api/members" type="submit" value="Add Member" class="btn btn-primary btn-block">
+</form>
+
+<p>{{#each members}}
+<ul class="list-group">
+    <li class="list-group-item">{{this.name}} {{this.country}}</li>
+</ul>
+
+
+{{/each}}
+</p>
+
+<a href="/api/members" class="btn btn-light">Visit json</a>
